@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_activity2.*
+import maes.tech.intentanim.CustomIntent
 
 class Activity2 : AppCompatActivity() {
 
@@ -12,11 +13,19 @@ class Activity2 : AppCompatActivity() {
         setContentView(R.layout.activity_activity2)
         buttonInActivity2.setOnClickListener {
             startActivity(Intent(this,Activity3::class.java))
+            CustomIntent.customType(this,"fadein-to-fadeout")
+          //  CustomIntent.customType(this,"rotateout-to-rotatein")
+           // CustomIntent.customType(this,"bottom-to-up")
+
+
         }
     }
 
-    /*override fun finish() {
+    override fun finish() {
         super.finish()
-        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
-    }*/
+        CustomIntent.customType(this,"fadein-to-fadeout")
+        //CustomIntent.customType(this,"rotateout-to-rotatein")
+      //  CustomIntent.customType(this,"bottom-to-up")
+
+    }
 }
